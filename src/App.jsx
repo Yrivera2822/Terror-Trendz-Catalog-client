@@ -1,29 +1,30 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import React from 'react'
-// import AudioPlayer from 'react-h5-audio-player';
-// import 'react-h5-audio-player/lib/styles.css';
-import axios from 'axios';
-// import 'react-h5-audio-player/lib/styles.less' Use LESS
-// import 'react-h5-audio-player/src/styles.scss' Use SASS
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "./components/Navbar";
+import About from "./Pages/About";
+import Hats from "./Pages/Hats";
+import NotFound from "./Pages/NotFound";
+import Jewelry from "./Pages/Jewelry";
+import "./App.css";
+import React from "react";
+import Homepage from "./Pages/Homepage";
+import { Routes, Route } from "react-router-dom";
 
-// const Player = () => (
-//   <AudioPlayer
-//     autoPlay
-//     src="http://example.com/audio.mp3"
-//     onPlay={e => console.log("onPlay")}
-//     // other props here
-//   />
-// );
 function App() {
-  
-  function App() {
-    return (
-      <div>
-        <Navbar />
-      </div>
-    )
-  }  
+  return (
+    <div>
+      <Navbar />
+      <h1>Welcome to Terror Trendz! appjsx</h1>
+
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/hats" element={<Hats />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/jewelry" element={<Jewelry />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
